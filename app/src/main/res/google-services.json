@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "841376337398",
+    "firebase_url": "https://qrparking-dcd85.firebaseio.com",
+    "project_id": "qrparking-dcd85",
+    "storage_bucket": "qrparking-dcd85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841376337398:android:1518d946fbb95f99",
+        "android_client_info": {
+          "package_name": "com.example.amma.qrparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841376337398-a9b1fcq0ejbtk8bemkch39ikfm6570ou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amma.qrparking",
+            "certificate_hash": "e095080a15c1b2128698044ca322102272b65de7"
+          }
+        },
+        {
+          "client_id": "841376337398-akmh43erlkscs1s2bsr0cj4af2bomoc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyFOX71jwN8RSX4dMjHYQlqrlTlQkHuBg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841376337398-akmh43erlkscs1s2bsr0cj4af2bomoc9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

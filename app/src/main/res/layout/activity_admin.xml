@@ -52,7 +52,7 @@
                     android:src="@drawable/pswd"
                     android:layout_gravity="center"/>
                 <EditText
-                    android:id="@+id/pswrdd"
+                    android:id="@+id/pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
@@ -72,6 +72,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -90,13 +91,14 @@
             android:background="#009a9a"
             android:gravity="center"
             android:letterSpacing="0.2"
+            android:onClick="check"
             android:padding="16dp"
             android:text="Login"
             android:textColor="#d9e5f3"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/sup"
+            android:id="@+id/fpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

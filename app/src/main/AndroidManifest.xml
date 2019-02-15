@@ -8,7 +8,7 @@
         android:label="CARPar"
         android:roundIcon="@drawable/carpar"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/FullScreen">
         <activity android:name=".admin" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".handler" />
-        <activity android:name=".user"></activity>
+        <activity android:name=".user" />
+        <activity android:name=".UserSignup"></activity>
     </application>
 
 </manifest>
