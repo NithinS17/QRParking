@@ -78,7 +78,7 @@
         android:orientation="vertical"
         android:gravity="bottom"
         android:layout_marginBottom="20dp">
-        <TextView
+        <Button
             android:id="@+id/lin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -82,7 +82,7 @@
         android:paddingLeft="60dp"
         android:paddingRight="60dp">
 
-        <TextView
+        <Button
             android:id="@+id/lin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -91,7 +91,6 @@
             android:background="#009a9a"
             android:gravity="center"
             android:letterSpacing="0.2"
-            android:onClick="check"
             android:padding="16dp"
             android:text="Login"
             android:textColor="#d9e5f3"
