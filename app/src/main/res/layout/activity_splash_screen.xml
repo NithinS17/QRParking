@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grdnt"
+    tools:context=".SplashScreen">
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/carpar" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="155dp"
+        android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="142dp"
+        android:layout_marginEnd="90dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Grab Your Slot!!"
+        android:textColor="@android:color/darker_gray" />
+
+
+</RelativeLayout>

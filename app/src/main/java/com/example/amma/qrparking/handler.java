@@ -17,6 +17,14 @@ EditText user,pass;
         user = (EditText)findViewById(R.id.usrusr);
         pass = (EditText)findViewById(R.id.pswrdd);
         Button login=(Button) findViewById(R.id.lin);
+        Button Singup=(Button) findViewById(R.id.sin) ;
+
+        Singup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(handler.this, HandlerSignup.class));
+            }
+        });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

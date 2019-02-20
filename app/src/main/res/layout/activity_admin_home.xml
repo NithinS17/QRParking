@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminHome"
+    android:background="@drawable/grdnt"
+    android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="109dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/admin1" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="94dp"
+        android:layout_height="81dp"
+        android:layout_alignStart="@+id/imageButton4"
+        android:layout_alignTop="@+id/imageButton3"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/roundcorner"
+        android:padding="1dp"
+        android:src="@drawable/update" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="85dp"
+        android:layout_height="81dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="189dp"
+        android:background="@drawable/roundcorner"
+        android:padding="1dp"
+        android:src="@drawable/add" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="85dp"
+        android:layout_height="81dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageButton5"
+        android:layout_marginEnd="47dp"
+        android:background="@drawable/roundcorner"
+        android:padding="1dp"
+        android:src="@drawable/user" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="78dp"
+        android:layout_height="81dp"
+        android:layout_alignEnd="@+id/imageButton3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/roundcorner"
+        android:padding="1dp"
+        android:src="@drawable/delete" />
+
+</RelativeLayout>
