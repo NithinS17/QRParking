@@ -6,12 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 
 public class admin extends AppCompatActivity {
     //int f;
     EditText user,pass;
+
+
 
 
 
@@ -37,7 +44,7 @@ public class admin extends AppCompatActivity {
                    pass.requestFocus();
                }
                 else{
-                    Intent i = new Intent(getApplicationContext(),admin.class);
+                    Intent i = new Intent(getApplicationContext(),AdminHome.class);
                     startActivity(i);
                 }
            }
