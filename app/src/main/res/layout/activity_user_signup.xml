@@ -24,28 +24,7 @@
                     android:src="@drawable/usrusr"
                     android:layout_gravity="center"/>
                 <EditText
-                    android:id="@+id/usrusr"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Username"
-                    android:textColorHint="#d9e5f3"
-                    android:layout_marginLeft="15dp"
-                    android:background="#00000000"
-                    android:letterSpacing="0.1"
-                    android:textSize="16dp"
-                    android:inputType="text"
-                    android:textColor="#fff"
-                    />
-
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/mail"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
@@ -57,7 +36,11 @@
                     android:inputType="text"
                     android:textColor="#fff"
                     />
+
+
+
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -134,7 +117,7 @@
                     android:textColorHint="#d9e5f3"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:letterSpacing="0.1"
                     android:textSize="16dp"
                     android:textColor="#fff"/>

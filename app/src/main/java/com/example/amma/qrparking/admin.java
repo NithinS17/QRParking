@@ -1,6 +1,7 @@
 package com.example.amma.qrparking;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 
@@ -44,6 +46,33 @@ public class admin extends AppCompatActivity {
                    pass.requestFocus();
                }
                 else{
+
+                  /*  DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    Query query = reference.child("admin").orderByChild("username").equalTo("admin");
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                                    // do something with the individual "issues"
+                                    admin usr=ca.getValue(admin.class);
+                                    user= (String) admin.get
+                                    ty= (String) car.getType();
+                                    v= (String) car.getModel();
+                                    t5.setText(c.getRegno());
+                                    t11.setText(c.getType());
+                                    t6.setText(c.getModel());
+                                }
+                            }}
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });*/
+
+
+
                     Intent i = new Intent(getApplicationContext(),AdminHome.class);
                     startActivity(i);
                 }

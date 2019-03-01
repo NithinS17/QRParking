@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "841376337398-a9b1fcq0ejbtk8bemkch39ikfm6570ou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amma.qrparking",
+            "certificate_hash": "e095080a15c1b2128698044ca322102272b65de7"
+          }
+        },
+        {
           "client_id": "841376337398-akmh43erlkscs1s2bsr0cj4af2bomoc9.apps.googleusercontent.com",
           "client_type": 3
         }
