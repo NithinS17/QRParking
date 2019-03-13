@@ -24,10 +24,10 @@
                     android:src="@drawable/usrusr"
                     android:layout_gravity="center"/>
                 <EditText
-                    android:id="@+id/usrusr"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="Email"
                     android:textColorHint="#d9e5f3"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"

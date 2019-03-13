@@ -24,7 +24,8 @@
         <activity
             android:name=".AdminHome"
             android:label="Admin Home" />
-        <activity android:name=".HandlerSignup"></activity>
+        <activity android:name=".HandlerSignup" />
+        <activity android:name=".SearchSlot"></activity>
     </application>
 
 </manifest>

@@ -66,9 +66,7 @@ public class UserSignup extends AppCompatActivity {
                         repass.setError("Password Required");
                         repass.requestFocus();
                 }
-                else if(!Password.equals(rePassword)){
-                    Toast.makeText(getApplicationContext(),"Passwords Doesn't Match",Toast.LENGTH_LONG).show();
-                }
+
                 else if(mob.getText().toString().length()== 0) {
                     mob.setError("Mobile number Required");
                     mob.requestFocus();
@@ -83,6 +81,8 @@ public class UserSignup extends AppCompatActivity {
                                         if (task.isSuccessful())
                                         {
                                             Toast.makeText(getApplicationContext(),"User Registered Successfully",Toast.LENGTH_LONG).show();
+                                            Intent i = new Intent(getApplicationContext(),user.class);
+                                            startActivity(i);
                                         }
                                     }
                                 });
