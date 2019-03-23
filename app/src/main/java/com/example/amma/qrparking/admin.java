@@ -73,7 +73,7 @@ public class admin extends AppCompatActivity {
 
 
 
-                    Intent i = new Intent(getApplicationContext(),AdminHome.class);
+                    Intent i = new Intent(getApplicationContext(),UserHome.class);
                     startActivity(i);
                 }
            }
