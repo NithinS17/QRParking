@@ -11,7 +11,21 @@
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="105dp"
         android:background="@drawable/grdnt"
         app:srcCompat="@drawable/qrscan" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="95dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/grdnt"
+        app:srcCompat="@drawable/addplace" />
+
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.amma.qrparking;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +13,33 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class UserHome extends AppCompatActivity {
+    EditText carnum,phnenum,date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_home);
+
+        carnum=(EditText)findViewById(R.id.carnum);
+        phnenum=(EditText)findViewById(R.id.mob);
+        //date=(EditText)findViewById(R.id.calander);
+
+        if(carnum.getText().toString().length()== 0) {
+            carnum.setError("Username Required");
+            carnum.requestFocus();
+        }
+        else if(phnenum.getText().toString().length()== 0) {
+            phnenum.setError("Username Required");
+            phnenum.requestFocus();
+        }
+        else if(date.getText().toString().length()== 0) {
+            date.setError("Username Required");
+            date.requestFocus();
+        }
+        else {
+            //Intent i= new Intent(getApplicationContext(),qr.class);
+            //startActivity(i);
+        } 
 
 
 
@@ -48,6 +71,7 @@ public class UserHome extends AppCompatActivity {
             }
 
         });
+
 
     }
 
