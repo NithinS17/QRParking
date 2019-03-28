@@ -27,7 +27,8 @@
         <activity android:name=".HandlerSignup" />
         <activity android:name=".SearchSlot" />
         <activity android:name=".HandlerHome" />
-        <activity android:name=".UserHome"></activity>
+        <activity android:name=".UserHome" />
+        <activity android:name=".QRScanner"></activity>
     </application>
 
 </manifest>

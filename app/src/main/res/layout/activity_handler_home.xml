@@ -8,7 +8,7 @@
     android:background="@drawable/grdnt">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/qrscan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/qrscan" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/addplace"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
