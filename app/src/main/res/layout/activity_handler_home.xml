@@ -15,7 +15,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="105dp"
         android:background="@drawable/grdnt"
-        app:srcCompat="@drawable/qrscan" />
+        app:srcCompat="@drawable/qrscan"
+        android:onClick="visit"/>
 
     <ImageButton
         android:id="@+id/addplace"

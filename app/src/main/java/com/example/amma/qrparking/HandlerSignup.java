@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HandlerSignup extends AppCompatActivity {
 
@@ -42,7 +46,19 @@ public class HandlerSignup extends AppCompatActivity {
                     mob.requestFocus();
                 }
                 else{
-                    Intent i = new Intent(getApplicationContext(),UserSignup.class);
+                    String uname=user.getText().toString();
+                    String password=pass.getText().toString();
+                    Integer phno=mob.getId();
+
+
+                    DatabaseReference databasereference2= FirebaseDatabase.getInstance().getReference("handler");
+                    String id = databasereference2.push().getKey();
+                    handlerclass h=new handlerclass(uname,password,phno);
+                    databasereference2.child(uname).setValue(h);
+
+                    Toast.makeText(getApplicationContext(),"User Registered Successfully",Toast.LENGTH_LONG).show();
+
+                    Intent i = new Intent(getApplicationContext(),handler.class);
                     startActivity(i);
                 }
             }

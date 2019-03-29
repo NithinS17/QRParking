@@ -1,11 +1,21 @@
 package com.example.amma.qrparking;
 
+import android.app.DownloadManager;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class handler extends AppCompatActivity {
 EditText user,pass;
@@ -38,8 +48,61 @@ EditText user,pass;
                     pass.requestFocus();
                 }
                 else{
-                    Intent i = new Intent(getApplicationContext(),handler.class);
-                    startActivity(i);
+                    final String uname = user.getText().toString();
+                    final String passw=pass.getText().toString();
+
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    Query query =  reference.child("handler").orderByChild("user").equalTo(uname);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists())
+                            { try {
+                                for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                                    {
+
+                                        handlerclass r = ca.getValue(handlerclass.class);
+                                        String name=r.getUser();
+                                        String passwrd=r.getPass();
+
+
+                                        if(uname==name && passw==passwrd)
+                                        {
+                                            Toast.makeText(getApplicationContext(),"Welcome"+uname,Toast.LENGTH_LONG).show();
+                                            Intent i = new Intent(getApplicationContext(),HandlerHome.class);
+                                            startActivity(i);
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(getApplicationContext(),"Invalid User",Toast.LENGTH_LONG).show();
+                                            Intent i = new Intent(getApplicationContext(),handler.class);
+                                        }
+                                    }
+                                }
+                            }catch(Exception e){}
+
+
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
+
+
+
+
+
+
+
+
+
+
                 }
             }
         });

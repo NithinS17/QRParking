@@ -73,7 +73,7 @@ public class admin extends AppCompatActivity {
 
 
 
-                    Intent i = new Intent(getApplicationContext(),UserHome.class);
+                    Intent i = new Intent(getApplicationContext(),QRScanner.class);
                     startActivity(i);
                 }
            }

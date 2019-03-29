@@ -44,9 +44,9 @@ public class UserHome extends AppCompatActivity {
 
 
 
-        final Calendar myCalendar = Calendar.getInstance();
+        /*final Calendar myCalendar = Calendar.getInstance();
 
-        final EditText edittext= (EditText) findViewById(R.id.calander);
+        //final EditText edittext= (EditText) findViewById(R.id.calander);
         final DatePickerDialog.OnDateSetListener date= new DatePickerDialog.OnDateSetListener() {
             private void updateLabel() {
                 String myFormat = "MM/dd/yy"; //In which you need put here
@@ -70,7 +70,7 @@ public class UserHome extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
 
-        });
+        });*/
 
 
     }
