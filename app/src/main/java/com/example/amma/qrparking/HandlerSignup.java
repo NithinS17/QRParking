@@ -14,6 +14,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class HandlerSignup extends AppCompatActivity {
 
     EditText user,pass,repass,mob;
+    DatabaseReference reff;
+    addhandler addhandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class HandlerSignup extends AppCompatActivity {
         pass = (EditText)findViewById(R.id.pass);
         mob = (EditText)findViewById(R.id.mob);
         Button login=(Button) findViewById(R.id.lin);
+        addhandler=new addhandler();
+        reff= FirebaseDatabase.getInstance().getReference().child("handler");
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,21 +49,28 @@ public class HandlerSignup extends AppCompatActivity {
                     mob.setError("Password Required");
                     mob.requestFocus();
                 }
-                else{
-                    String uname=user.getText().toString();
-                    String password=pass.getText().toString();
-                    Integer phno=mob.getId();
+                /*else if(!repass.equals("pass")){
+                    Toast.makeText(getApplicationContext(),"Password & Confirm password must be same",Toast.LENGTH_LONG).show();
+                    repass.requestFocus();
 
-
-                    DatabaseReference databasereference2= FirebaseDatabase.getInstance().getReference("handler");
-                    String id = databasereference2.push().getKey();
-                    handlerclass h=new handlerclass(uname,password,phno);
-                    databasereference2.child(uname).setValue(h);
-
-                    Toast.makeText(getApplicationContext(),"User Registered Successfully",Toast.LENGTH_LONG).show();
-
-                    Intent i = new Intent(getApplicationContext(),handler.class);
+                }*/
+                else {
+                    //if(repass.equals("pass")) {
+                    int phonenum = Integer.parseInt(mob.getText().toString().trim());
+                    addhandler.setUsername(user.getText().toString().trim());
+                    addhandler.setPassword(pass.getText().toString().trim());
+                    addhandler.setConfirmpass(repass.getText().toString().trim());
+                    addhandler.setPhonenum(phonenum);
+                    reff.push().setValue(addhandler);
+                    Toast.makeText(getApplicationContext(), "Signed up Successfully", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(getApplicationContext(), HandlerHome.class);
                     startActivity(i);
+                    //}
+                    //else{
+                    //  Toast.makeText(getApplicationContext(), "Something went wrong Try again later", Toast.LENGTH_LONG).show();
+                    // Intent i = new Intent(getApplicationContext(), handler.class);
+                    // startActivity(i);
+                    //}
                 }
             }
         });
