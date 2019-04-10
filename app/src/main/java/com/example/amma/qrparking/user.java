@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,50 +26,79 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class user extends AppCompatActivity {
-    EditText email,password;
-    FirebaseAuth mAuth;
+    EditText username,password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-
-        email = (EditText)findViewById(R.id.email);
+        username = (EditText)findViewById(R.id.uname);
         password = (EditText)findViewById(R.id.pswrdd);
         Button login=(Button) findViewById(R.id.lin);
         Button Signup=(Button) findViewById(R.id.sin) ;
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(user.this, UserSignup.class));
+                Intent i =new Intent(getApplicationContext(),UserSignup.class);
+                startActivity(i);
+
             }
         });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(email.getText().toString().length()== 0) {
-                    email.setError("Username Required");
-                    email.requestFocus();
+                if(username.getText().toString().length()== 0) {
+                    username.setError("Username Required");
+                    username.requestFocus();
                 }
                 else if(password.getText().toString().length()== 0) {
                     password.setError("Password Required");
                     password.requestFocus();
                 }
                 else{
-                    String txt=email.getText().toString();
-                    String pass=password.getText().toString();
-                    mAuth.signInWithEmailAndPassword(txt,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    final String uname = username.getText().toString().trim();
+                    final String passw=password.getText().toString().trim();
+
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+                    Query query =  reference.child("user").orderByChild("username").equalTo(uname);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Intent i =new Intent(getApplicationContext(),user.class);
-                                startActivity(i);
-                            }
-                            else {
-                                Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_LONG).show();
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists())
+                            { try {
+                                for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                                    {
+
+                                        adduser r = ca.getValue(adduser.class);
+                                        String name=r.getUsername().toString().trim();
+                                        String passwrd=r.getPassword().toString().trim();
+
+
+                                        if(uname.equals(name) && passw.equals(passwrd))
+                                        {
+                                            Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_LONG).show();
+                                            Intent i = new Intent(getApplicationContext(),UserHome.class);
+                                            startActivity(i);
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(getApplicationContext(),"Invalid User",Toast.LENGTH_LONG).show();
+                                            Intent i = new Intent(getApplicationContext(),user.class);
+                                        }
+                                    }
+                                }
+                            }catch(Exception e){}
+
 
                             }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
                     });
@@ -77,10 +107,18 @@ public class user extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
                 }
             }
         });
-
     }
 
 }
+
+
+

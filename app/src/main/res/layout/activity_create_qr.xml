@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".UserHome"
     android:background="@drawable/grdnt">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,13 +25,13 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/usrusr"
+                    android:src="@drawable/car"
                     android:layout_gravity="center"/>
                 <EditText
-                    android:id="@+id/uname"
+                    android:id="@+id/carnum"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint=" Enter Car Number"
                     android:textColorHint="#d9e5f3"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
@@ -37,41 +41,17 @@
                     android:textColor="#fff"
                     />
             </LinearLayout>
-            <LinearLayout
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#4a5a71"></LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/pswd"
-                    android:layout_gravity="center"/>
-                <EditText
-                    android:id="@+id/pswrdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:textColorHint="#d9e5f3"
-                    android:layout_marginLeft="15dp"
-                    android:background="#00000000"
-                    android:inputType="textPassword"
-                    android:letterSpacing="0.1"
-                    android:textSize="16dp"
-                    android:textColor="#fff"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#4a5a71"></LinearLayout>
+                android:background="#4a5a71"></RelativeLayout>
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
@@ -84,41 +64,18 @@
         <Button
             android:id="@+id/lin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="200dp"
             android:background="#009a9a"
             android:gravity="center"
             android:letterSpacing="0.2"
             android:padding="16dp"
-            android:text="Login"
+            android:text="Submit"
             android:textColor="#d9e5f3"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/sin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="50dp"
-            android:background="#009a9a"
-            android:gravity="center"
-            android:letterSpacing="0.2"
-            android:padding="16dp"
-            android:text="Signup"
-            android:textColor="#d9e5f3"
-            android:textStyle="bold"
-           />
 
-
-        <TextView
-            android:id="@+id/sup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:letterSpacing="0.1"
-            android:text="Forgot Password ? "
-            android:textColor="#d9e5f3" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -128,7 +85,9 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/carpar"
+            android:id="@+id/qrImage"
             />
     </LinearLayout>
+
+
 </RelativeLayout>

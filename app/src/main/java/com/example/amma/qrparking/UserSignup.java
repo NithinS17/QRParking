@@ -26,100 +26,72 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class UserSignup extends AppCompatActivity {
-    EditText email,password,repass,mob;
+    EditText username,password,repass,mob;
+    adduser adduser;
+    DatabaseReference reff;
 
 
-    private FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_signup);
-        email = (EditText)findViewById(R.id.email);
-        repass = (EditText)findViewById(R.id.repass);
-        password = (EditText)findViewById(R.id.pass);
-        mob = (EditText)findViewById(R.id.mob);
-        final Button login=(Button) findViewById(R.id.lin);
-        mAuth = FirebaseAuth.getInstance();
+        username = (EditText) findViewById(R.id.email);
+        repass = (EditText) findViewById(R.id.repass);
+        password = (EditText) findViewById(R.id.pass);
+        mob = (EditText) findViewById(R.id.mob);
+        final Button login = (Button) findViewById(R.id.lin);
+        adduser=new adduser();
+        reff= FirebaseDatabase.getInstance().getReference().child("user");
+
+
 
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Email=email.getText().toString();
-                String Password=password.getText().toString();
-                String rePassword=repass.getText().toString();
-                if(email.getText().toString().length()== 0) {
-                    email.setError("Username Required");
-                    email.requestFocus();
-                }
-                else if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches())
-                {
-                    Toast.makeText(getApplicationContext(),"Enter valid email address!!",Toast.LENGTH_LONG).show();
+                if(username.getText().toString().length()== 0) {
+                    username.setError("Username Required");
+                    username.requestFocus();
                 }
                 else if(password.getText().toString().length()== 0) {
                     password.setError("Password Required");
                     password.requestFocus();
                 }
                 else if(repass.getText().toString().length()== 0) {
-                        repass.setError("Password Required");
-                        repass.requestFocus();
+                    repass.setError("Password Required");
+                    repass.requestFocus();
                 }
-
                 else if(mob.getText().toString().length()== 0) {
-                    mob.setError("Mobile number Required");
+                    mob.setError("Password Required");
                     mob.requestFocus();
                 }
-                else
-                    {
-
-                        mAuth.createUserWithEmailAndPassword(Email,Password)
-                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                        if (task.isSuccessful())
-                                        {
-                                            Toast.makeText(getApplicationContext(),"User Registered Successfully",Toast.LENGTH_LONG).show();
-                                            Intent i = new Intent(getApplicationContext(),user.class);
-                                            startActivity(i);
-                                        }
-                                    }
-                                });
-
-
-
-
-
-
-                    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                else {
+                    //if(repass.equals("pass")) {
+                    int phonenum = Integer.parseInt(mob.getText().toString().trim());
+                    adduser.setUsername(username.getText().toString().trim());
+                    adduser.setPassword(password.getText().toString().trim());
+                    adduser.setConfirmpass(repass.getText().toString().trim());
+                    adduser.setPhonenum(phonenum);
+                    reff.push().setValue(adduser);
+                    Toast.makeText(getApplicationContext(), "Signed up Successfully", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(getApplicationContext(), UserHome.class);
+                    startActivity(i);
+                    //}
+                    //else{
+                    //  Toast.makeText(getApplicationContext(), "Something went wrong Try again later", Toast.LENGTH_LONG).show();
+                    // Intent i = new Intent(getApplicationContext(), handler.class);
+                    // startActivity(i);
+                    //}
                 }
-
+            }
         });
 
     }
 
+    }
 
-}
+
 
 

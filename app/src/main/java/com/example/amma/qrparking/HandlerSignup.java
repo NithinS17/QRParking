@@ -15,7 +15,7 @@ public class HandlerSignup extends AppCompatActivity {
 
     EditText user,pass,repass,mob;
     DatabaseReference reff;
-    addhandler addhandler;
+    addhandler  addhandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

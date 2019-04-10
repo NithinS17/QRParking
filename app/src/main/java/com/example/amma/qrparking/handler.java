@@ -48,11 +48,11 @@ EditText user,pass;
                     pass.requestFocus();
                 }
                 else{
-                    final String uname = user.getText().toString();
-                    final String passw=pass.getText().toString();
+                    final String uname = user.getText().toString().trim();
+                    final String passw=pass.getText().toString().trim();
 
                     DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-                    Query query =  reference.child("handler").orderByChild("user").equalTo(uname);
+                    Query query =  reference.child("handler").orderByChild("username").equalTo(uname);
                     query.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -61,14 +61,14 @@ EditText user,pass;
                                 for (DataSnapshot ca : dataSnapshot.getChildren()) {
                                     {
 
-                                        handlerclass r = ca.getValue(handlerclass.class);
-                                        String name=r.getUser();
-                                        String passwrd=r.getPass();
+                                        addhandler r = ca.getValue(addhandler.class);
+                                        String name=r.getUsername().toString().trim();
+                                        String passwrd=r.getPassword().toString().trim();
 
 
-                                        if(uname==name && passw==passwrd)
+                                        if(uname.equals(name) && passw.equals(passwrd))
                                         {
-                                            Toast.makeText(getApplicationContext(),"Welcome"+uname,Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_LONG).show();
                                             Intent i = new Intent(getApplicationContext(),HandlerHome.class);
                                             startActivity(i);
                                         }
