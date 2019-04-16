@@ -96,13 +96,14 @@
             android:textColor="#d9e5f3"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/fpass"
+        <Button
+            android:id="@+id/apass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/grdnt"
             android:gravity="center"
             android:letterSpacing="0.1"
-            android:text="Forgot Password ? "
+            android:text="Change Password "
             android:textColor="#d9e5f3" />
     </LinearLayout>
     <LinearLayout

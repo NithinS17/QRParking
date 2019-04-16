@@ -15,11 +15,26 @@ import com.google.zxing.integration.android.IntentResult;
 public class HandlerHome extends AppCompatActivity {
 
 public ImageButton qrbtn;
+public ImageButton plcebtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler_home);
+
+
+        plcebtn=(ImageButton)findViewById(R.id.addplace);
+        plcebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i= new Intent(getApplicationContext(),AddSlot.class);
+               startActivity(i);
+            }
+        });
+
+
+
+
         final Activity activity = this;
         qrbtn=(ImageButton)findViewById(R.id.qrscan);
         qrbtn.setOnClickListener(new View.OnClickListener() {

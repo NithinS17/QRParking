@@ -37,8 +37,8 @@ public class UserHome extends AppCompatActivity {
             date.requestFocus();
         }
         else {
-            //Intent i= new Intent(getApplicationContext(),qr.class);
-            //startActivity(i);
+           Intent i =new Intent(getApplicationContext(),SearchSlot.class);
+           startActivity(i);
         } 
 
 
