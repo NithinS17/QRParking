@@ -46,7 +46,7 @@ public class AddSlot extends AppCompatActivity {
         Slist.add("Maharashtra");
         Slist.add("Tamil Nadu");
 
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.activity_list_item,Slist);
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Slist);
         Sspinner.setAdapter(adapter);
 
         submit.setOnClickListener(new View.OnClickListener() {

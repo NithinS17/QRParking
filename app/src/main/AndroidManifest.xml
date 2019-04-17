@@ -29,6 +29,7 @@
         <activity android:name=".HandlerHome" />
         <activity android:name=".UserHome" />
         <activity android:name=".QRScanner" />
+        <activity android:name=".CreateQR" />
         <activity android:name=".AddSlot" />
         <activity android:name=".changeadminpass"></activity>
     </application>

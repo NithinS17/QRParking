@@ -79,7 +79,7 @@ public class user extends AppCompatActivity {
                                         if(uname.equals(name) && passw.equals(passwrd))
                                         {
                                             Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_LONG).show();
-                                            Intent i = new Intent(getApplicationContext(),UserHome.class);
+                                            Intent i = new Intent(getApplicationContext(),SearchSlot.class);
                                             startActivity(i);
                                         }
                                         else

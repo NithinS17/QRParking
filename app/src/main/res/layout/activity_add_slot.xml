@@ -63,7 +63,7 @@
         android:textColor="@android:color/background_light" />
 
     <TextView
-        android:id="@+id/distrct"
+        android:id="@+id/txtvie"
         android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -73,7 +73,7 @@
         android:textColor="@android:color/background_light" />
 
     <TextView
-        android:id="@+id/city"
+
         android:layout_width="92dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/State"
