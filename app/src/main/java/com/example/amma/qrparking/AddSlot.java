@@ -23,6 +23,7 @@ public class AddSlot extends AppCompatActivity {
     Spinner state;
     addslotdetails slotdetails;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

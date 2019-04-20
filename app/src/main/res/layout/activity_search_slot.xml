@@ -1,9 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchSlot">
+    android:background="@drawable/grdnt">
 
-</android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-5dp"
+        android:layout_marginTop="-2dp">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/static_spinner"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="48dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+
+
+            <Button
+                android:id="@+id/select"
+                android:onClick="select"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/static_spinner"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="150dp"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/img1"
+
+
+                />
+
+            <Button
+                android:id="@+id/select1"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="267dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp"
+                android:visibility="invisible"/>
+
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="150dp"
+                android:layout_marginLeft="240dp"
+                android:id="@+id/img2"
+                />
+
+            <Button
+                android:id="@+id/select2"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginEnd="39dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                android:visibility="invisible"/>
+
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="400dp"
+                android:layout_marginLeft="40dp"
+                android:id="@+id/img3"
+
+                />
+            <Button
+                android:id="@+id/select3"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginEnd="244dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                android:layout_marginTop="575dp"
+                android:visibility="invisible"/>
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="400dp"
+                android:layout_marginLeft="240dp"
+                android:id="@+id/img4"
+
+                />
+            <Button
+                android:id="@+id/select4"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="575dp"
+                android:layout_marginLeft="200dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp"
+                android:visibility="invisible"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

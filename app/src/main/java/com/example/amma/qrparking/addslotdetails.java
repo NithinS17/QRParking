@@ -6,7 +6,6 @@ public class addslotdetails {
     private String City;
     private String Landmark;
     private Integer nslots;
-
     public addslotdetails() {
     }
 
