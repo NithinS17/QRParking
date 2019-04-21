@@ -1,5 +1,6 @@
 package com.example.amma.qrparking;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,13 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,20 +81,54 @@ public class SearchSlot extends AppCompatActivity {
 
             }
 
+
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            Query query = reference.child("parking slots").orderByChild("city").equalTo(place);
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) try {
+                        for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                            {
+                                addslotdetails s = ca.getValue(addslotdetails.class);
+                                String cityname = s.getCity().toString().trim();
+
+                            }
+                        }
+                    } catch (Exception e) {
+
+
+                    }
+                }
+
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+
         }
+
         public  void select(View view)
         {
-            if(place.equals("Edapally"))
-            {
-               i1.setImageResource(R.drawable.edap1);
-               i2.setImageResource(R.drawable.edap2);
-               i3.setImageResource(R.drawable.edap3);
-               i4.setImageResource(R.drawable.edap4);
-               b1.setVisibility(View.VISIBLE);
-               b2.setVisibility(View.VISIBLE);
-               b3.setVisibility(View.VISIBLE);
-               b4.setVisibility(View.VISIBLE);
+            if (place.equals("Edapally")) {
+                i1.setImageResource(R.drawable.edap1);
+                i2.setImageResource(R.drawable.edap2);
+                i3.setImageResource(R.drawable.edap3);
+                i4.setImageResource(R.drawable.edap4);
+                b1.setVisibility(View.VISIBLE);
+                b2.setVisibility(View.VISIBLE);
+                b3.setVisibility(View.VISIBLE);
+                b4.setVisibility(View.VISIBLE);
             }
         }
+
+
+
+
+
+        }
     }
-}
+

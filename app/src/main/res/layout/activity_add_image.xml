@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addImage"
+    android:background="@drawable/grdnt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-106dp">
+
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:text="UPLOAD AN IMAGE OF YOUR SLOT"
+            android:textColor="#EED6D1" />
+
+        <Button
+            android:id="@+id/choose"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="32dp"
+            android:background="#009a9a"
+            android:letterSpacing="0.2"
+            android:text="choose"
+            android:textColor="#d9e5f3"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="60dp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="250dp" />
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="148dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="300dp"
+            android:layout_marginBottom="135dp"
+            android:background="#009a9a"
+            android:gravity="center"
+            android:letterSpacing="0.2"
+            android:padding="16dp"
+            android:text="Upload"
+            android:textColor="#d9e5f3"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

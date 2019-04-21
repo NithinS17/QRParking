@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.amma.qrparking">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/carpar"
@@ -9,6 +13,7 @@
         android:roundIcon="@drawable/carpar"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
+        <activity android:name=".addImage"></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +36,7 @@
         <activity android:name=".QRScanner" />
         <activity android:name=".CreateQR" />
         <activity android:name=".AddSlot" />
-        <activity android:name=".changeadminpass"></activity>
+        <activity android:name=".changeadminpass" />
     </application>
 
 </manifest>

@@ -19,8 +19,8 @@ public class AddSlot extends AppCompatActivity {
     Spinner Sspinner,Dspinner,Cspinner;
     Button submit;
     DatabaseReference reff;
-    EditText district,city,landmark,slots;
-    Spinner state;
+    EditText landmark,slots;
+    Spinner city;
     addslotdetails slotdetails;
 
 
@@ -31,21 +31,19 @@ public class AddSlot extends AppCompatActivity {
         submit=(Button)findViewById(R.id.submit);
           slotdetails=new addslotdetails();
 
-        state=(Spinner)findViewById(R.id.sp2);
-        district=(EditText)findViewById(R.id.district);
-        city=(EditText)findViewById(R.id.city);
+        city=(Spinner)findViewById(R.id.sp2);
         landmark=(EditText)findViewById(R.id.landmark);
         slots=(EditText)findViewById(R.id.slots);
 
         reff= FirebaseDatabase.getInstance().getReference().child("ParkingSlot");
         Sspinner=(Spinner)findViewById(R.id.sp2);
         ArrayList<String> Slist=new ArrayList<>();
-        Slist.add("Andhra Pradesh");
-        Slist.add("Goa");
-        Slist.add("Karnataka");
-        Slist.add("Kerala");
-        Slist.add("Maharashtra");
-        Slist.add("Tamil Nadu");
+        Slist.add("Aluva");
+        Slist.add("Kalamassery");
+        Slist.add("Kakkanad");
+        Slist.add("Edapally");
+        Slist.add("Vytilla");
+        Slist.add("Kaloor");
 
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_dropdown_item,Slist);
         Sspinner.setAdapter(adapter);
@@ -54,15 +52,13 @@ public class AddSlot extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int slotno = Integer.parseInt(slots.getText().toString().trim());
-                slotdetails.setState(state.getSelectedItem().toString().trim());
-                slotdetails.setDistrict(district.getText().toString().trim());
-                slotdetails.setCity(city.getText().toString().trim());
-                slotdetails.setLandmark(landmark.getText().toString().trim());
-                slotdetails.setNslots(slotno);
-                reff.push().setValue(slotdetails);
-                Toast.makeText(getApplicationContext(), "Slots Added Successfully", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getApplicationContext(), HandlerHome.class);
+             //   int slotno = Integer.parseInt(slots.getText().toString().trim());
+               // slotdetails.setCity(city.getSelectedItem().toString().trim());
+                //lotdetails.setLandmark(landmark.getText().toString().trim());
+              //  slotdetails.setNslots(slotno);
+                //reff.push().setValue(slotdetails);
+                //Toast.makeText(getApplicationContext(), "Slots Added Successfully", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(),addImage.class);
                 startActivity(i);
 
 

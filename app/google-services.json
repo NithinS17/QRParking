@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "841376337398-669789ueg4e8nea13e70rktlo42ksea3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amma.qrparking",
+            "certificate_hash": "b85c39b1ce60e571ba0b8d774fc36ac2d1c4d45f"
+          }
+        },
+        {
           "client_id": "841376337398-akmh43erlkscs1s2bsr0cj4af2bomoc9.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -41,20 +49,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "841376337398-akmh43erlkscs1s2bsr0cj4af2bomoc9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }
