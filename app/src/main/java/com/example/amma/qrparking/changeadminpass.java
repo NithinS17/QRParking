@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class changeadminpass extends AppCompatActivity {
     Button btn;
     EditText newpass,cnewpass;
-    FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,28 +26,7 @@ public class changeadminpass extends AppCompatActivity {
         btn=(Button)findViewById(R.id.apcbtn);
         newpass=(EditText)findViewById(R.id.newpass);
         cnewpass=(EditText)findViewById(R.id.cnewpass);
-        auth=FirebaseAuth.getInstance();
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-                if(user!=null){
-                    user.updatePassword(newpass.getText().toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(getApplicationContext(),"Password Changed",Toast.LENGTH_SHORT).show();
-                                Intent i=new Intent(getApplicationContext(),admin.class);
-                            }
-                            else{
-                                Toast.makeText(getApplicationContext(),"Password Couldn't be changed,try again later!",Toast.LENGTH_SHORT).show();
-                                Intent i=new Intent(getApplicationContext(),admin.class);
-                            }
-                        }
-                    });
-                }
-            }
-        });
+
 
     }
 

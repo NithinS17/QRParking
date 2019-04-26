@@ -46,8 +46,23 @@ public class SearchSlot extends AppCompatActivity {
         b4 = findViewById(R.id.select4);
         btn = findViewById(R.id.select);
 
+        Spinner dropdown = findViewById(R.id.static_spinner);
+        String[] items = new String[]{"Edapally", "Int MCA 2016", "Int MCA 2017", "Int MCA 2018", "MCA LAT 2017", "MCA LAT 2018"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        dropdown.setAdapter(adapter);
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                place = (String) parent.getItemAtPosition(position);
+            }
 
-        staticSpinner = (Spinner) findViewById(R.id.static_spinner);
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+       /* staticSpinner = (Spinner) findViewById(R.id.static_spinner);
         ArrayList<String> Slist = new ArrayList<>();
         Slist.add("Aluva");
         Slist.add("Kalamassery");
@@ -57,13 +72,13 @@ public class SearchSlot extends AppCompatActivity {
         Slist.add("Palarivattom");
         Slist.add("Kaloor");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.activity_list_item, Slist);
-        staticSpinner.setAdapter(adapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.activity_search_slot, Slist);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //adapter.setDropDownViewResource(android.R.layout.activity_list_item);
+        staticSpinner.setAdapter(adapter);
     }
 
-    public abstract class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
+      public abstract class ItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
 
         String firstItem = String.valueOf(staticSpinner.getSelectedItem());
@@ -109,26 +124,22 @@ public class SearchSlot extends AppCompatActivity {
             });
 
 
-        }
+        }*/
 
-        public  void select(View view)
-        {
-            if (place.equals("Edapally")) {
-                i1.setImageResource(R.drawable.edap1);
-                i2.setImageResource(R.drawable.edap2);
-                i3.setImageResource(R.drawable.edap3);
-                i4.setImageResource(R.drawable.edap4);
-                b1.setVisibility(View.VISIBLE);
-                b2.setVisibility(View.VISIBLE);
-                b3.setVisibility(View.VISIBLE);
-                b4.setVisibility(View.VISIBLE);
-            }
-        }
-
-
-
-
-
+    }
+    public  void select(View view)
+    {
+        if (place.equals("Edapally")) {
+            i1.setImageResource(R.drawable.edap1);
+            i2.setImageResource(R.drawable.edap2);
+            i3.setImageResource(R.drawable.edap3);
+            i4.setImageResource(R.drawable.edap4);
+            b1.setVisibility(View.VISIBLE);
+            b2.setVisibility(View.VISIBLE);
+            b3.setVisibility(View.VISIBLE);
+            b4.setVisibility(View.VISIBLE);
         }
     }
+
+}
 

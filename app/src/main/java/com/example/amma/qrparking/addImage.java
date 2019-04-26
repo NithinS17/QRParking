@@ -57,7 +57,7 @@ public class addImage extends AppCompatActivity {
 
 
         storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReferenceFromUrl("Url to Storage");
+        storageReference = storage.getReferenceFromUrl("gs://qrparking-dcd85.appspot.com/");
 
 
         btnChoose.setOnClickListener(new View.OnClickListener() {

@@ -62,6 +62,7 @@ public ImageButton plcebtn;
             }
             else {
                 Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+
             }
         }
         else {

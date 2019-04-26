@@ -153,7 +153,7 @@
         android:layout_alignStart="@+id/State"
         android:layout_alignTop="@+id/landmark"
         android:text="Landmark"
-        android:textColor="@color/browser_actions_bg_grey" />
+        android:textColor="@color/fui_linkColor" />
 
     <EditText
         android:id="@+id/landmark"

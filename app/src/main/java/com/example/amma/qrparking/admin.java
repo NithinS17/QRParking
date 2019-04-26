@@ -21,7 +21,7 @@ public class admin extends AppCompatActivity {
     EditText user, pass;
     String uname = "admin";
     String passw = "admin";
-    Button cbtn;
+    Button cbtn,login;
 
 
     @Override
@@ -31,7 +31,7 @@ public class admin extends AppCompatActivity {
         user = (EditText) findViewById(R.id.usrusr);
         pass = (EditText) findViewById(R.id.pass);
         cbtn=(Button)findViewById(R.id.apass);
-        Button login = (Button) findViewById(R.id.lin);
+        login=(Button)findViewById(R.id.login);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +50,9 @@ public class admin extends AppCompatActivity {
                         startActivity(i);
                     } else {
                         Toast.makeText(admin.this, "Invalid User", Toast.LENGTH_SHORT).show();
-                        Intent I = new Intent(getApplicationContext(), admin.class);
+                        Intent i = new Intent(getApplicationContext(), admin.class);
                     }
+                }
 
                   /* DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
                     Query query = reference.child("admin").orderByChild("username").equalTo("admin");
@@ -77,7 +78,7 @@ public class admin extends AppCompatActivity {
                     });
                     Intent i = new Intent(getApplicationContext(),QRScanner.class);
                     startActivity(i);*/
-                }
+
             }
         });
 
