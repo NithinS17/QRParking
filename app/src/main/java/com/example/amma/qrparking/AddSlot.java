@@ -52,19 +52,39 @@ public class AddSlot extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-             //   int slotno = Integer.parseInt(slots.getText().toString().trim());
-               // slotdetails.setCity(city.getSelectedItem().toString().trim());
-                //lotdetails.setLandmark(landmark.getText().toString().trim());
-              //  slotdetails.setNslots(slotno);
-                //reff.push().setValue(slotdetails);
-                //Toast.makeText(getApplicationContext(), "Slots Added Successfully", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(getApplicationContext(),addImage.class);
-                startActivity(i);
+                if(landmark.getText().toString().length()== 0) {
+                    landmark.setError("Landmark Required");
+                    landmark.requestFocus();
+                }
+                else if(slots.getText().length()==0)
+                {
+                    slots.setError("Enter slots");
+                    slots.requestFocus();
+                }
+                else
+                {
 
+                    int slotno = Integer.parseInt(slots.getText().toString().trim());
+                    slotdetails.setCity(city.getSelectedItem().toString().trim());
+                    slotdetails.setLandmark(landmark.getText().toString().trim());
+                    slotdetails.setNslots(slotno);
+
+                    reff.push().setValue(slotdetails);
+                    Toast.makeText(getApplicationContext(), "Slots Added Successfully", Toast.LENGTH_LONG).show();
+
+                    Intent i = new Intent(getApplicationContext(),addImage.class);
+                    startActivity(i);
+                }
 
 
 
             }
         });
+
+
+
+
+            }
+
     }
-}
+

@@ -37,7 +37,7 @@ import java.util.UUID;
 
 public class addImage extends AppCompatActivity {
 
-    private Button btnChoose,btnUpload;
+    private Button btnChoose,btnUpload,logot;
     private ImageView imageView;
     private Uri filePath;
     private final int PICK_IMAGE_REQUEST=71;
@@ -53,6 +53,8 @@ public class addImage extends AppCompatActivity {
 
         btnChoose = (Button) findViewById(R.id.choose);
         btnUpload = (Button) findViewById(R.id.upload);
+        logot=findViewById(R.id.lgout);
+
         imageView = (ImageView) findViewById(R.id.imageView5);
 
 
@@ -73,8 +75,19 @@ public class addImage extends AppCompatActivity {
 
             }
         });
+        logot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(getApplicationContext(),handler.class);
+                startActivity(i);
+
+            }
+        });
+
 
     }
+
+
 
     private void uploadImage() {
 
@@ -141,6 +154,8 @@ public class addImage extends AppCompatActivity {
         }
 
     }
+
+
 
 
 

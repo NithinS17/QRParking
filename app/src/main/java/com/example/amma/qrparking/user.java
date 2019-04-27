@@ -37,12 +37,20 @@ public class user extends AppCompatActivity {
         password = (EditText)findViewById(R.id.pswrdd);
         Button login=(Button) findViewById(R.id.lin);
         Button Signup=(Button) findViewById(R.id.sin) ;
+        Button fpass=(Button) findViewById(R.id.fpass) ;
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i =new Intent(getApplicationContext(),UserSignup.class);
+                Intent i =new Intent(getApplicationContext(), UserSignup.class);
                 startActivity(i);
 
+            }
+        });
+        fpass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),foregtpassword.class);
+                startActivity(i);
             }
         });
 

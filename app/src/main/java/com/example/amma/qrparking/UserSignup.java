@@ -26,8 +26,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class UserSignup extends AppCompatActivity {
-    EditText username,password,repass,mob;
+    EditText username,password,repass,mob,email;
     adduser adduser;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reff;
 
 
@@ -37,7 +38,8 @@ public class UserSignup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_signup);
-        username = (EditText) findViewById(R.id.email);
+        username = (EditText) findViewById(R.id.username);
+        email=(EditText)findViewById(R.id.uemail);
         repass = (EditText) findViewById(R.id.repass);
         password = (EditText) findViewById(R.id.pass);
         mob = (EditText) findViewById(R.id.mob);
@@ -67,17 +69,38 @@ public class UserSignup extends AppCompatActivity {
                     mob.setError("Password Required");
                     mob.requestFocus();
                 }
+                else if(password.getText().toString().equals(repass.getText().toString())){
+                    repass.setError("Password didn't match");
+                    repass.requestFocus();
+
+
+                }
                 else {
-                    //if(repass.equals("pass")) {
-                    int phonenum = Integer.parseInt(mob.getText().toString().trim());
-                    adduser.setUsername(username.getText().toString().trim());
-                    adduser.setPassword(password.getText().toString().trim());
-                    adduser.setConfirmpass(repass.getText().toString().trim());
-                    adduser.setPhonenum(phonenum);
-                    reff.push().setValue(adduser);
-                    Toast.makeText(getApplicationContext(), "Signed up Successfully", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(getApplicationContext(), UserHome.class);
-                    startActivity(i);
+
+                    reff.child("userno").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            int nousr = Integer.parseInt(String.valueOf(dataSnapshot.getValue()));
+                            reff.child("userno").setValue(nousr+1);
+                            reff.child("username").child("user"+(nousr+1)).setValue(username.getText().toString().trim());
+                            int phonenum = Integer.parseInt(mob.getText().toString().trim());
+                            adduser.setUsername(username.getText().toString().trim());
+                            adduser.setPassword(password.getText().toString().trim());
+                            adduser.setEmail(email.getText().toString().trim());
+                            adduser.setConfirmpass(repass.getText().toString().trim());
+                            adduser.setPhonenum(phonenum);
+                            reff.push().setValue(adduser);
+                            Toast.makeText(getApplicationContext(), "Signed up Successfully", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(getApplicationContext(), UserHome.class);
+                            startActivity(i);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
+
                     //}
                     //else{
                     //  Toast.makeText(getApplicationContext(), "Something went wrong Try again later", Toast.LENGTH_LONG).show();

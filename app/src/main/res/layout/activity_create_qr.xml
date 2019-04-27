@@ -7,87 +7,77 @@
     tools:context=".UserHome"
     android:background="@drawable/grdnt">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/tv9"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="50dp" />
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/car"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="80dp"/>
+
+    <EditText
+        android:id="@+id/carnum"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:background="#00000000"
+        android:hint=" Enter Car Number"
+        android:inputType="text"
+        android:letterSpacing="0.1"
+        android:textColor="#fff"
+        android:textColorHint="#d9e5f3"
+        android:textSize="16dp"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/book"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="290dp"
+        android:background="#009a9a"
         android:gravity="center"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="16dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/car"
-                    android:layout_gravity="center"/>
-                <EditText
-                    android:id="@+id/carnum"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint=" Enter Car Number"
-                    android:textColorHint="#d9e5f3"
-                    android:layout_marginLeft="15dp"
-                    android:background="#00000000"
-                    android:letterSpacing="0.1"
-                    android:textSize="16dp"
-                    android:inputType="text"
-                    android:textColor="#fff"
-                    />
-            </LinearLayout>
+        android:letterSpacing="0.2"
+        android:padding="16dp"
+        android:text="Book"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="100dp"/>
 
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#4a5a71"></RelativeLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/user"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="bottom"
-        android:orientation="vertical"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp">
-
-        <Button
-            android:id="@+id/lin"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="200dp"
-            android:background="#009a9a"
-            android:gravity="center"
-            android:letterSpacing="0.2"
-            android:padding="16dp"
-            android:text="Submit"
-            android:textColor="#d9e5f3"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <ImageView
+        android:id="@+id/qrImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="100dp"/>
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="290dp"
+        android:background="#009a9a"
         android:gravity="center"
-        android:layout_marginBottom="400dp">
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/qrImage"
-            />
-    </LinearLayout>
+        android:letterSpacing="0.2"
+        android:padding="16dp"
+        android:text="Log Out"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="100dp"/>
 
 
 </RelativeLayout>
+
+
+
+
+

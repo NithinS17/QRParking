@@ -89,7 +89,7 @@
             android:gravity="center"
             android:layout_gravity="bottom"
             android:padding="16dp"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="45dp"
             android:letterSpacing="0.2"/>
 
         <Button
@@ -106,12 +106,14 @@
             android:textColor="#d9e5f3"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/sup"
+        <Button
+            android:id="@+id/fpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Forgot Password ? "
+            android:background="@drawable/grdnt"
+            android:onClick="frgtpass"
             android:textColor="#d9e5f3"
             android:letterSpacing="0.1"
             />

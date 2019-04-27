@@ -48,6 +48,9 @@ public ImageButton plcebtn;
                 integrator.setBarcodeImageEnabled(false);
                 integrator.initiateScan();
 
+
+
+
             }
         });
     }

@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class HandlerSignup extends AppCompatActivity {
 
-    EditText user,pass,repass,mob;
+    EditText user,pass,repass,mob,email;
     DatabaseReference reff;
     addhandler  addhandler;
 
@@ -25,6 +25,7 @@ public class HandlerSignup extends AppCompatActivity {
         user = (EditText)findViewById(R.id.usrusr);
         repass = (EditText)findViewById(R.id.repass);
         pass = (EditText)findViewById(R.id.pass);
+        email = (EditText)findViewById(R.id.hemail);
         mob = (EditText)findViewById(R.id.mob);
         Button login=(Button) findViewById(R.id.lin);
         addhandler=new addhandler();
@@ -59,6 +60,7 @@ public class HandlerSignup extends AppCompatActivity {
                     int phonenum = Integer.parseInt(mob.getText().toString().trim());
                     addhandler.setUsername(user.getText().toString().trim());
                     addhandler.setPassword(pass.getText().toString().trim());
+                    addhandler.setEmail(email.getText().toString().trim());
                     addhandler.setConfirmpass(repass.getText().toString().trim());
                     addhandler.setPhonenum(phonenum);
                     reff.push().setValue(addhandler);

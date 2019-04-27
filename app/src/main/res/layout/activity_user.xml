@@ -111,13 +111,15 @@
            />
 
 
-        <TextView
-            android:id="@+id/sup"
+        <Button
+            android:id="@+id/fpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:letterSpacing="0.1"
             android:text="Forgot Password ? "
+            android:onClick="frgtpass"
+            android:background="@drawable/grdnt"
             android:textColor="#d9e5f3" />
     </LinearLayout>
     <LinearLayout

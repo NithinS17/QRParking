@@ -12,6 +12,8 @@
         android:roundIcon="@drawable/carpar"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
+        <activity android:name=".foregtpassword"></activity>
+        <activity android:name=".NoOfUsrs" />
         <activity android:name=".addImage" />
         <activity android:name=".SplashScreen">
             <intent-filter>
