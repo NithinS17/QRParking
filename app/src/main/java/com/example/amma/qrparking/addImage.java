@@ -2,6 +2,7 @@ package com.example.amma.qrparking;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.LabeledIntent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -45,11 +46,16 @@ public class addImage extends AppCompatActivity {
     FirebaseStorage storage;
     StorageReference storageReference;
 
+    SharedPreferences sp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_image);
+
+        sp=getApplicationContext().getSharedPreferences("user",MODE_PRIVATE);
+
 
         btnChoose = (Button) findViewById(R.id.choose);
         btnUpload = (Button) findViewById(R.id.upload);
@@ -78,8 +84,10 @@ public class addImage extends AppCompatActivity {
         logot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sp.edit().putString("USER","").apply();
                 Intent i =new Intent(getApplicationContext(),handler.class);
                 startActivity(i);
+                finish();
 
             }
         });

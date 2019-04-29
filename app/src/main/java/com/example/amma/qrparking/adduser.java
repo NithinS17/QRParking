@@ -14,6 +14,13 @@ public class adduser {
         this.email = email;
     }
 
+    public adduser(String username,String password,String confirmpass,int phonenum) {
+        this.username = username;
+        this.password=password;
+        this.confirmpass=confirmpass;
+        this.phonenum=phonenum;
+
+    }
     private String email;
 
     public String getUsername() {

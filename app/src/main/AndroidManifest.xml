@@ -12,7 +12,10 @@
         android:roundIcon="@drawable/carpar"
         android:supportsRtl="true"
         android:theme="@style/FullScreen">
-        <activity android:name=".foregtpassword"></activity>
+        <activity android:name=".scannedresult"></activity>
+        <activity android:name=".AboutUs" />
+        <activity android:name=".noofhandlers" />
+        <activity android:name=".foregtpassword" />
         <activity android:name=".NoOfUsrs" />
         <activity android:name=".addImage" />
         <activity android:name=".SplashScreen">
@@ -33,7 +36,6 @@
         <activity android:name=".HandlerSignup" />
         <activity android:name=".SearchSlot" />
         <activity android:name=".HandlerHome" />
-        <activity android:name=".UserHome" />
         <activity android:name=".QRScanner" />
         <activity android:name=".CreateQR" />
         <activity android:name=".AddSlot" />

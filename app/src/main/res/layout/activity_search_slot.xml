@@ -11,9 +11,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-5dp"
-        android:layout_marginTop="-2dp">
+        android:layout_marginStart="-31dp"
+        android:layout_marginTop="0dp">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -33,7 +32,6 @@
 
             <Button
                 android:id="@+id/select"
-                android:onClick="select"
                 android:layout_width="104dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/static_spinner"
@@ -41,6 +39,7 @@
                 android:layout_marginEnd="32dp"
                 android:background="#009a9a"
                 android:letterSpacing="0.2"
+                android:onClick="select"
                 android:text="SELECT"
                 android:textColor="#d9e5f3"
                 android:textStyle="bold"
@@ -48,24 +47,23 @@
                 tools:layout_editor_absoluteY="60dp" />
 
             <ImageView
+                android:id="@+id/img1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="150dp"
                 android:layout_marginLeft="40dp"
-                android:id="@+id/img1"
+                android:layout_marginTop="150dp"
 
 
                 />
 
             <TextView
+                android:id="@+id/txtv1"
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="325dp"
-                android:id="@+id/txtv1"
-                android:textColor="#FFFF"/>
-
+                android:textColor="#FFFF" />
 
 
             <Button
@@ -81,29 +79,26 @@
                 android:text="SELECT"
                 android:textColor="#d9e5f3"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="137dp"
-                tools:layout_editor_absoluteY="60dp"
                 android:visibility="invisible"
-                />
-
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp" />
 
 
             <ImageView
+                android:id="@+id/img2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="150dp"
                 android:layout_marginLeft="240dp"
-                android:id="@+id/img2"
-                />
+                android:layout_marginTop="150dp" />
 
             <TextView
+                android:id="@+id/txtv2"
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="250dp"
                 android:layout_marginTop="325dp"
-                android:id="@+id/txtv2"
-                android:textColor="#FFFF"/>
+                android:textColor="#FFFF" />
 
             <Button
                 android:id="@+id/select2"
@@ -112,92 +107,148 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="200dp"
                 android:layout_marginTop="425dp"
-                android:layout_marginEnd="39dp"
+                android:layout_marginEnd="60dp"
                 android:background="#009a9a"
                 android:letterSpacing="0.2"
                 android:text="SELECT"
                 android:textColor="#d9e5f3"
                 android:textStyle="bold"
-                android:visibility="invisible"/>
-
+                android:visibility="invisible" />
 
 
             <ImageView
+                android:id="@+id/img3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="475dp"
                 android:layout_marginLeft="40dp"
-                android:id="@+id/img3"
+                android:layout_marginTop="555dp"
 
                 />
 
             <TextView
+                android:id="@+id/txtv3"
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="650dp"
-                android:id="@+id/txtv3"
-                android:textColor="#FFFF"/>
+                android:layout_marginTop="730dp"
+                android:textColor="#FFFF" />
+
             <Button
                 android:id="@+id/select3"
                 android:layout_width="104dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginLeft="40dp"
+                android:layout_marginTop="800dp"
                 android:layout_marginEnd="244dp"
                 android:background="#009a9a"
                 android:letterSpacing="0.2"
                 android:text="SELECT"
                 android:textColor="#d9e5f3"
                 android:textStyle="bold"
-                android:layout_marginTop="750dp"
-                android:visibility="invisible"/>
+                android:visibility="invisible" />
 
 
             <ImageView
+                android:id="@+id/img4"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="475dp"
                 android:layout_marginLeft="240dp"
-                android:id="@+id/img4"
+                android:layout_marginTop="555dp"
 
                 />
+
             <TextView
+                android:id="@+id/txtv4"
                 android:layout_width="100dp"
                 android:layout_height="55dp"
                 android:layout_marginLeft="260dp"
-                android:layout_marginTop="650dp"
-                android:id="@+id/txtv4"
-                android:textColor="#FFFF"/>
+                android:layout_marginTop="730dp"
+                android:textColor="#FFFF" />
 
             <Button
                 android:id="@+id/select4"
                 android:layout_width="104dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="750dp"
-                android:layout_marginLeft="200dp"
                 android:layout_alignParentEnd="true"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="800dp"
                 android:layout_marginEnd="32dp"
                 android:background="#009a9a"
                 android:letterSpacing="0.2"
                 android:text="SELECT"
                 android:textColor="#d9e5f3"
                 android:textStyle="bold"
+                android:visibility="invisible"
                 tools:layout_editor_absoluteX="137dp"
-                tools:layout_editor_absoluteY="60dp"
-                android:visibility="invisible"/>
+                tools:layout_editor_absoluteY="60dp" />
 
 
             <ImageView
                 android:id="@+id/imag5"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:visibility="invisible"
+                android:layout_marginLeft="40dp"
 
                 android:layout_marginTop="900dp"
-                android:layout_marginLeft="40dp"/>
+                android:visibility="invisible" />
+
+
+            <TextView
+                android:id="@+id/txtv5"
+                android:layout_width="100dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="1100dp"
+                android:textColor="#FFFF" />
+
+
+
+            <Button
+                android:id="@+id/select6"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1200dp"
+                android:layout_marginEnd="32dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp" />
+
+
+
+
+
+
+
+
+
+
+            <Button
+                android:id="@+id/select5"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1200dp"
+                android:layout_marginEnd="32dp"
+                android:background="#009a9a"
+                android:letterSpacing="0.2"
+                android:text="SELECT"
+                android:textColor="#d9e5f3"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="60dp" />
+
 
         </RelativeLayout>
     </ScrollView>

@@ -19,48 +19,61 @@
         android:src="@drawable/admin1" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/userdetails"
         android:layout_width="94dp"
         android:layout_height="81dp"
-        android:layout_alignStart="@+id/imageButton4"
-        android:layout_alignTop="@+id/imageButton3"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/roundcorner"
-        android:padding="1dp"
-        android:src="@drawable/update" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="85dp"
-        android:layout_height="81dp"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="189dp"
-        android:background="@drawable/roundcorner"
-        android:padding="1dp"
-        android:src="@drawable/add" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="85dp"
-        android:layout_height="81dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/imageButton5"
-        android:layout_marginEnd="47dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/roundcorner"
         android:padding="1dp"
         android:src="@drawable/user" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="78dp"
+        android:id="@+id/handlerdetails"
+        android:layout_width="85dp"
         android:layout_height="81dp"
-        android:layout_alignEnd="@+id/imageButton3"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="215dp"
         android:background="@drawable/roundcorner"
         android:padding="1dp"
-        android:src="@drawable/delete" />
+        android:src="@drawable/user" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="300dp"
+        android:textColor="#ffff"
+        android:text="User" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="325dp"
+        android:textColor="#ffff"
+        android:text="Handler" />
+
+    <Button
+        android:id="@+id/lout"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginRight="100dp"
+        android:background="#009a9a"
+        android:letterSpacing="0.2"
+        android:text="Log Out"
+        android:textColor="#d9e5f3"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="60dp" />
+
 
 </RelativeLayout>

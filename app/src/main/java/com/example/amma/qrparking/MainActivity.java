@@ -99,7 +99,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(i);
 
 
-        }   else if (id == R.id.nav_about) {
+        }
+        else if (id == R.id.nav_about) {
+            Intent i=new Intent(getApplicationContext(),AboutUs.class);
+            startActivity(i);
 
         }
 

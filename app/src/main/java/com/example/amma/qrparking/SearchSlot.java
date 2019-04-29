@@ -53,7 +53,7 @@ public class SearchSlot extends AppCompatActivity {
         btn = findViewById(R.id.select);
 
         Spinner dropdown = findViewById(R.id.static_spinner);
-        String[] items = new String[]{"Edapally", "Aluva", "Kalamassery", "Kaloor", "Vytilla", "Kakkanad"};
+        String[] items = new String[]{"Edapally", "Aluva", "Kalamassery", "Kaloor", "Vytila", "Kakkanad"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -141,9 +141,51 @@ public class SearchSlot extends AppCompatActivity {
                b.putString("Details", tx1.getText().toString());
                i.putExtras(b);
                startActivity(i);
+               finish();
 
            }
        });
+
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),CreateQR.class);
+                Bundle b = new Bundle();
+                b.putString("Details", tx2.getText().toString());
+                i.putExtras(b);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+        b3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),CreateQR.class);
+                Bundle b = new Bundle();
+                b.putString("Details", tx3.getText().toString());
+                i.putExtras(b);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),CreateQR.class);
+                Bundle b = new Bundle();
+                b.putString("Details", tx4.getText().toString());
+                i.putExtras(b);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
+
 
     }
 
@@ -215,6 +257,20 @@ public class SearchSlot extends AppCompatActivity {
             tx3.setText("Aluva Road,Near LULU mall\nHandler:Luiz\nFare:Rs.30/hr");
             i4.setImageResource(R.drawable.kaloor4);
             tx4.setText("Vytilla Road,Near Obron mall\nHandler:Ivan\nFare:Rs.25/hr");
+            b1.setVisibility(View.VISIBLE);
+            b2.setVisibility(View.VISIBLE);
+            b3.setVisibility(View.VISIBLE);
+            b4.setVisibility(View.VISIBLE);
+        }
+        if (place.equals("Kakkanad")) {
+            i1.setImageResource(R.drawable.kakk1);
+            tx1.setText("Metro Station,Ernakulam Road\nHandler:Suraez\nFare:Rs.35/hr");
+            i2.setImageResource(R.drawable.kakk2);
+            tx2.setText("Palarivattom,Near Church\nHandler:Rakitic\nFare:Rs.20/hr");
+            i3.setImageResource(R.drawable.kakk3);
+            tx3.setText("Aluva Road,Near LULU mall\nHandler:Dembele\nFare:Rs.30/hr");
+            i4.setImageResource(R.drawable.kakk4);
+            tx4.setText("Vytilla Road,Near Obron mall\nHandler:Arturo\nFare:Rs.25/hr");
             b1.setVisibility(View.VISIBLE);
             b2.setVisibility(View.VISIBLE);
             b3.setVisibility(View.VISIBLE);

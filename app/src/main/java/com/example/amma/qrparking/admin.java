@@ -1,6 +1,7 @@
 package com.example.amma.qrparking;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ public class admin extends AppCompatActivity {
     String uname = "admin";
     String passw = "admin";
     Button cbtn,login;
+    SharedPreferences sp;
 
 
     @Override
@@ -32,10 +34,15 @@ public class admin extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.pass);
         cbtn=(Button)findViewById(R.id.apass);
         login=(Button)findViewById(R.id.login);
+        sp=getApplicationContext().getSharedPreferences("user",MODE_PRIVATE);
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 if (user.getText().toString().length() == 0) {
                     user.setError("Username Required");
                     user.requestFocus();
@@ -44,10 +51,12 @@ public class admin extends AppCompatActivity {
                     pass.requestFocus();
                 } else {
 
-                    if (user.equals(uname) && pass.equals(passw)) {
+                    if (user.getText().toString().equals("admin") && pass.getText().toString().equals("admin")) {
+                        sp.edit().putString("USER","ADMIN").apply();
                         Toast.makeText(admin.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getApplicationContext(), AdminHome.class);
                         startActivity(i);
+
                     } else {
                         Toast.makeText(admin.this, "Invalid User", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getApplicationContext(), admin.class);

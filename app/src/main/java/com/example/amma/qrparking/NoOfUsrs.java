@@ -15,59 +15,58 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NoOfUsrs extends AppCompatActivity {
-    String name;
-    Integer i,nousr;
+    TextView txt1;
+    List<username> list= new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_no_of_usrs);
-
-        final DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("user").child("userno");
-        dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+        txt1=findViewById(R.id.txt1);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        Query query = reference.child("username");
+        query.addValueEventListener (new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                nousr = Integer.parseInt(String.valueOf(dataSnapshot.getValue()));
-                final String[] mStrings = new String[nousr];
-                for (i=1;i<nousr+1;i++)
-                {
-
-                    DatabaseReference usref = FirebaseDatabase.getInstance().getReference().child("user").child("username").child("user"+i);
-                    usref.addListenerForSingleValueEvent(new ValueEventListener() {
-
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               if (dataSnapshot.exists()) {
+                    try {
+                      /*  Integer length = Integer.parseInt(String.valueOf(dataSnapshot.getChildrenCount()));
+                        String [] s = new String[length];
+                        String [] s1 = new String[length];
+                        for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                            txt1.setSingleLine(false);
+                            s[length]=ca.getKey();
+                            s1[length]=ca.getValue().toString();
+                            length--;
 
                         }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                        for(int j =length;j>0;j++)
+                        {
+                            txt1.setText(s[j]+" "+s1[j]+"\n");
+                        }*/
+                        for (DataSnapshot ca : dataSnapshot.getChildren()) {
+                            txt1.setText(ca.getValue().toString());
                         }
-                    });
+                    }
+                    catch (Exception e){
+                        Toast.makeText(NoOfUsrs.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
 
-                }
-                for (int k = 1;k<nousr;k++) {
-                    name = "tv"+k;
-                    int id = getResources().getIdentifier(name, "id", getPackageName());
-                    if (id != 0) {
-                        TextView textView = (TextView) findViewById(id);
-                        Toast.makeText(NoOfUsrs.this, String.valueOf(mStrings[k]), Toast.LENGTH_SHORT).show();
-                        textView.setText(mStrings[k]);
                     }
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
 
     }
 

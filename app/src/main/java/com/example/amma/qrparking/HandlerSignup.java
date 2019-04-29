@@ -31,12 +31,26 @@ public class HandlerSignup extends AppCompatActivity {
         addhandler=new addhandler();
         reff= FirebaseDatabase.getInstance().getReference().child("handler");
 
+        final String mail = email.getText().toString().trim();
+
+        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(user.getText().toString().length()== 0) {
                     user.setError("Username Required");
                     user.requestFocus();
+                }
+                else if(email.getText().toString().length()== 0) {
+                    email.setError("Email Required");
+                    email.requestFocus();
+                }
+                else if(!mail.matches(emailPattern)) {
+                    email.setError("Invalid Email");
+                    email.requestFocus();
                 }
                 else if(pass.getText().toString().length()== 0) {
                     pass.setError("Password Required");
@@ -64,6 +78,8 @@ public class HandlerSignup extends AppCompatActivity {
                     addhandler.setConfirmpass(repass.getText().toString().trim());
                     addhandler.setPhonenum(phonenum);
                     reff.push().setValue(addhandler);
+                    DatabaseReference dt=FirebaseDatabase.getInstance().getReference("nohandler");
+                    dt.child("hand").child(user.getText().toString().trim()).setValue(phonenum);
                     Toast.makeText(getApplicationContext(), "Signed up Successfully", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(getApplicationContext(), HandlerHome.class);
                     startActivity(i);

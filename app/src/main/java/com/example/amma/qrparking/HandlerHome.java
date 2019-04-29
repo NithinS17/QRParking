@@ -16,7 +16,7 @@ public class HandlerHome extends AppCompatActivity {
 
 public ImageButton qrbtn;
 public ImageButton plcebtn;
-
+String qrresult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public ImageButton plcebtn;
             public void onClick(View v) {
                Intent i= new Intent(getApplicationContext(),AddSlot.class);
                startActivity(i);
+               finish();
             }
         });
 
@@ -65,6 +66,12 @@ public ImageButton plcebtn;
             }
             else {
                 Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+                qrresult = result.getContents();
+                Intent i =new Intent(getApplicationContext(),scannedresult.class);
+                Bundle b =new Bundle();
+                b.putString("result",qrresult);
+                i.putExtras(b);
+                startActivity(i);
 
             }
         }

@@ -46,6 +46,13 @@ public class UserSignup extends AppCompatActivity {
         final Button login = (Button) findViewById(R.id.lin);
         adduser=new adduser();
         reff= FirebaseDatabase.getInstance().getReference().child("user");
+        final String mail = email.getText().toString().trim();
+
+        final String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        final String pswrd = password.getText().toString();
+        final String rpswrd = repass.getText().toString();
+
 
 
 
@@ -57,6 +64,14 @@ public class UserSignup extends AppCompatActivity {
                     username.setError("Username Required");
                     username.requestFocus();
                 }
+                else if(email.getText().toString().length()== 0) {
+                    email.setError("Email Required");
+                    email.requestFocus();
+                }
+             //   else if(mail.matches(emailPattern)) {
+            //        email.setError("Invalid Email");
+             //       email.requestFocus();
+             //   }
                 else if(password.getText().toString().length()== 0) {
                     password.setError("Password Required");
                     password.requestFocus();
@@ -65,19 +80,43 @@ public class UserSignup extends AppCompatActivity {
                     repass.setError("Password Required");
                     repass.requestFocus();
                 }
-                else if(mob.getText().toString().length()== 0) {
-                    mob.setError("Password Required");
+                else if(mob.getText().toString().length()== 0 ) {
+                    mob.setError("Phone No Required");
                     mob.requestFocus();
                 }
-                else if(password.getText().toString().equals(repass.getText().toString())){
+                else if(!pswrd.matches(rpswrd)) {
                     repass.setError("Password didn't match");
                     repass.requestFocus();
-
-
                 }
-                else {
 
-                    reff.child("userno").addListenerForSingleValueEvent(new ValueEventListener() {
+                    else if( mob.getText().toString().length()<10)
+                    {
+
+                        mob.setError("Invalid Phone No");
+                        mob.requestFocus();
+
+                    }
+
+
+
+                else {
+                    int phonenum = Integer.parseInt(mob.getText().toString().trim());
+
+
+                    //userdetails updation
+                    DatabaseReference dt1=FirebaseDatabase.getInstance().getReference("user");
+                    adduser ad=new adduser(username.getText().toString().trim(),password.getText().toString().trim(),repass.getText().toString().trim(),phonenum);
+                    dt1.child(username.getText().toString().trim()).setValue(ad);
+
+
+                    //username updation
+                    DatabaseReference dt=FirebaseDatabase.getInstance().getReference("username");
+                    //username us=new username(username.getText().toString().trim(),phonenum);
+                    dt.child("user").child(username.getText().toString().trim()).setValue(phonenum);
+
+                    Toast.makeText(UserSignup.this, "succesfull", Toast.LENGTH_SHORT).show();
+
+                    /*reff.child("userno").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             int nousr = Integer.parseInt(String.valueOf(dataSnapshot.getValue()));
@@ -99,7 +138,7 @@ public class UserSignup extends AppCompatActivity {
                         public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
-                    });
+                    });*/
 
                     //}
                     //else{
@@ -113,7 +152,8 @@ public class UserSignup extends AppCompatActivity {
 
     }
 
-    }
+}
+
 
 
 

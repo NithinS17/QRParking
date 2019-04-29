@@ -5,6 +5,7 @@ import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ EditText user,pass,email;
     ProgressDialog pb;
     FirebaseAuth mauth;
     AlertDialog.Builder builder;
-
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +42,14 @@ EditText user,pass,email;
 
         user = (EditText)findViewById(R.id.usrusr);
         pass = (EditText)findViewById(R.id.pswrdd);
+        sp=getApplicationContext().getSharedPreferences("user",MODE_PRIVATE);
         //email=(EditText)findViewById(R.id.hemail);
         Button login=(Button) findViewById(R.id.lin);
         Button Singup=(Button) findViewById(R.id.sin) ;
-        Button fpass=(Button)findViewById(R.id.fpass) ;
-        pb= new ProgressDialog(handler.this);
-        pb.setMessage("TAKE A DEEP BREATH..!!");
+        pb = new ProgressDialog(handler.this);
+        pb.setMessage("LOGGING IN..!!");
 
-        fpass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),foregtpassword.class);
-                startActivity(i);
-            }
-        });
+
 
 
 
@@ -69,6 +64,8 @@ EditText user,pass,email;
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                pb.show();
                 if(user.getText().toString().length()== 0) {
                     user.setError("Username Required");
                     user.requestFocus();
@@ -98,9 +95,11 @@ EditText user,pass,email;
 
                                         if(uname.equals(name) && passw.equals(passwrd))
                                         {
+                                            sp.edit().putString("USER","HANDLER").apply();
                                             Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_LONG).show();
                                             Intent i = new Intent(getApplicationContext(),HandlerHome.class);
                                             startActivity(i);
+                                            pb.hide();
                                         }
                                         else
                                         {
@@ -127,12 +126,12 @@ EditText user,pass,email;
         });
 
     }
-    public void frgtpass(View v){
+  /*  public void frgtpass(View v){
         final EditText edittext= new EditText(handler.this);
         /*LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
-        edittext.setLayoutParams(lp);*/
+        edittext.setLayoutParams(lp);
 
         builder = new AlertDialog.Builder(this);
         builder.setTitle("Forgot Password ?");
@@ -165,5 +164,5 @@ EditText user,pass,email;
                 });
         AlertDialog alert = builder.create();
         alert.show();
-    }
+    }*/
 }

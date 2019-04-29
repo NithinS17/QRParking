@@ -74,6 +74,7 @@ public class AddSlot extends AppCompatActivity {
 
                     Intent i = new Intent(getApplicationContext(),addImage.class);
                     startActivity(i);
+                    finish();
                 }
 
 

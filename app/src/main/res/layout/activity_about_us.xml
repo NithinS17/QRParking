@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs"
+    android:background="@drawable/grdnt">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="2000dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:text="QR PARKING"
+            android:textColor="#ffff"
+            android:textSize="50dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="200dp"
+            android:text="                             Parking is an issue in many countries due to lack of parking places, to
+overcome this many countries have come up with dedicated parking sites. We
+propose a complete parking System for the Parking sites. This system can help
+User as well as the Parking sites have a good management of booking and
+managing the sites. This system has 3 users; Admin who is responsible to manage
+Parking sites and Handlers who handle the Parking sites. Second user is the
+Handler who is responsible for the Parking Site Management. Third user is the car
+owner who is in need of Parking. This system has many options and features
+when it comes to Booking a Parking Site and Security.
+
+
+              We propose a complete and automated parking system for the parking
+sites which makes the process much easier and simple .This system enables the
+user as well as the parking sites to have a good management of booking and
+managing the sites, and also helps to tackle with issues pertaining to non-
+reliability, time consumption and chances of missing the parking slip further
+resulting in the compulsory payment of a fine."
+            android:gravity="top"
+            android:textColor="#fff"/>
+
+
+
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

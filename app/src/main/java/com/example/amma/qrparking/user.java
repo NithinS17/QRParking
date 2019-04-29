@@ -1,7 +1,10 @@
 package com.example.amma.qrparking;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.CircularProgressDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +30,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class user extends AppCompatActivity {
     EditText username,password;
-
+    ProgressDialog pb;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,10 @@ public class user extends AppCompatActivity {
         password = (EditText)findViewById(R.id.pswrdd);
         Button login=(Button) findViewById(R.id.lin);
         Button Signup=(Button) findViewById(R.id.sin) ;
-        Button fpass=(Button) findViewById(R.id.fpass) ;
+
+        pb=new ProgressDialog(user.this);
+        pb.setMessage("LOGGING IN...");
+        sp=getApplicationContext().getSharedPreferences("user",MODE_PRIVATE);
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,17 +53,18 @@ public class user extends AppCompatActivity {
 
             }
         });
-        fpass.setOnClickListener(new View.OnClickListener() {
+    /*    fpass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),foregtpassword.class);
                 startActivity(i);
             }
-        });
+        });*/
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pb.show();
                 if(username.getText().toString().length()== 0) {
                     username.setError("Username Required");
                     username.requestFocus();
@@ -86,9 +94,11 @@ public class user extends AppCompatActivity {
 
                                         if(uname.equals(name) && passw.equals(passwrd))
                                         {
+                                            sp.edit().putString("USER","USER").apply();
                                             Toast.makeText(getApplicationContext(),"Welcome "+uname,Toast.LENGTH_LONG).show();
                                             Intent i = new Intent(getApplicationContext(),SearchSlot.class);
                                             startActivity(i);
+                                            pb.hide();
                                         }
                                         else
                                         {

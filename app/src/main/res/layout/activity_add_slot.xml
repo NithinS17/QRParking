@@ -20,7 +20,7 @@
         android:letterSpacing="0.2"
         android:layout_marginLeft="150dp"
         android:padding="16dp"
-        android:text="Search"
+        android:text="Continue"
         android:textColor="#d9e5f3"
         android:textStyle="bold" />
 
