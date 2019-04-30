@@ -16,6 +16,7 @@ public class HandlerSignup extends AppCompatActivity {
     EditText user,pass,repass,mob,email;
     DatabaseReference reff;
     addhandler  addhandler;
+    String pswrd,rpswrd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,8 @@ public class HandlerSignup extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pswrd = pass.getText().toString().trim();
+                rpswrd = repass.getText().toString().trim();
                 if(user.getText().toString().length()== 0) {
                     user.setError("Username Required");
                     user.requestFocus();
@@ -48,10 +51,10 @@ public class HandlerSignup extends AppCompatActivity {
                     email.setError("Email Required");
                     email.requestFocus();
                 }
-                else if(!mail.matches(emailPattern)) {
-                    email.setError("Invalid Email");
-                    email.requestFocus();
-                }
+              //  else if(!mail.matches(emailPattern)) {
+              //      email.setError("Invalid Email");
+              //      email.requestFocus();
+              //  }
                 else if(pass.getText().toString().length()== 0) {
                     pass.setError("Password Required");
                     pass.requestFocus();
@@ -61,14 +64,14 @@ public class HandlerSignup extends AppCompatActivity {
                     repass.requestFocus();
                 }
                 else if(mob.getText().toString().length()== 0) {
-                    mob.setError("Password Required");
+                    mob.setError("Phone Number Required");
                     mob.requestFocus();
                 }
-                /*else if(!repass.equals("pass")){
-                    Toast.makeText(getApplicationContext(),"Password & Confirm password must be same",Toast.LENGTH_LONG).show();
+                else if(!pswrd.equals(rpswrd)){
+                    repass.setError("Password Didn't match");
                     repass.requestFocus();
 
-                }*/
+                }
                 else {
                     //if(repass.equals("pass")) {
                     int phonenum = Integer.parseInt(mob.getText().toString().trim());

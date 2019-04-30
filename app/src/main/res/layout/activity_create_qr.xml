@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserHome"
     android:background="@drawable/grdnt">
 
 
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:background="#00000000"
-        android:hint=" Enter Car Number"
+        android:hint=" Enter Car Number and Time "
         android:inputType="text"
         android:letterSpacing="0.1"
         android:textColor="#fff"
